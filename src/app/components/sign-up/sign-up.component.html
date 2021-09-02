@@ -1,0 +1,34 @@
+<div class="body">
+    <div class="text-center">Sign Up</div>
+
+
+    <form #f="ngForm" (ngSubmit)="signup(f)">
+        <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="Name" required /><br>
+        <div class="alert alert-danger" *ngIf="name.invalid && name.touched"> Name is required</div>
+
+        <input ngModel name="email" #email="ngModel" type="text" [email]="true" class="form-control"
+            placeholder="E-Mail" required /><br>
+        <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched">Email is required</div>
+        <div class="alert alert-danger" *ngIf="email.errors?.email && email.touched">Email format isn't correct</div>
+
+        <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="Password"
+            required minlength="6" /><br>
+        <div class="alert alert-danger" *ngIf="password.errors?.required && password.touched">Password is required</div>
+        <div class="alert alert-danger" *ngIf="password.errors?.minlength && password.touched">Password should be more
+            than 6 character or equel</div>
+
+        <input ngModel name="confirmpassword" #confirmpassword="ngModel" type="password" class="form-control"
+            placeholder="Confirm Password" required /><br>
+        <div class="alert alert-danger" *ngIf="confirmpassword.errors?.required && confirmpassword.touched">Confirm
+            Password is required</div>
+        <div class="alert alert-danger" *ngIf="password.value !== confirmpassword.value && confirmpassword.touched">
+            Password aren't identical</div>
+
+        <input ngModel name="address" #address="ngModel" type="text" class="form-control" placeholder="Address"
+            required /><br>
+        <div class="alert alert-danger" *ngIf="address.errors?.required && address.touched">Address is required</div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> Create an Account </button>
+    </form>
+
+</div>

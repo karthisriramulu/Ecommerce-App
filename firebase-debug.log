@@ -1,0 +1,27 @@
+[debug] [2021-09-02T06:16:54.084Z] ----------------------------------------------------------------------
+[debug] [2021-09-02T06:16:54.085Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Eurasiayan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:list
+[debug] [2021-09-02T06:16:54.086Z] CLI Version:   9.17.0
+[debug] [2021-09-02T06:16:54.086Z] Platform:      win32
+[debug] [2021-09-02T06:16:54.086Z] Node Version:  v10.23.1
+[debug] [2021-09-02T06:16:54.086Z] Time:          Thu Sep 02 2021 11:46:54 GMT+0530 (India Standard Time)
+[debug] [2021-09-02T06:16:54.087Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-09-02T06:16:54.089Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-09-02T06:16:54.109Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-09-02T06:16:54.109Z] > authorizing via signed-in user (karthisriramulu@gmail.com)
+[debug] [2021-09-02T06:16:54.112Z] > refreshing access token with scopes: []
+[debug] [2021-09-02T06:16:54.113Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-09-02T06:16:54.673Z] <<< HTTP RESPONSE 400 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Thu, 02 Sep 2021 06:16:53 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-02T06:16:54.675Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2021-09-02T06:16:55.173Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-09-02T06:16:55.174Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-09-02T06:16:55.412Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 401
+[debug] [2021-09-02T06:16:55.412Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2021-09-02T06:16:55.413Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2021-09-02T06:16:56.152Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at module.exports (C:\Users\Eurasiayan\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Client.doRequest (C:\Users\Eurasiayan\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:238:23)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
