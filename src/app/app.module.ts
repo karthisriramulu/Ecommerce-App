@@ -16,7 +16,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {FormsModule} from '@angular/forms';
 
-// import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -30,15 +32,32 @@ import {FormsModule} from '@angular/forms';
     OrdersComponent,
     ProductsComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    
+    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyAESRb9D85lAm4wyGVg5ir6ccKXsBsX8Dc",
+      authDomain: "ecommerceapp-3e2d2.firebaseapp.com",
+      projectId: "ecommerceapp-3e2d2",
+      storageBucket: "ecommerceapp-3e2d2.appspot.com",
+      messagingSenderId: "954381883378",
+      appId: "1:954381883378:web:a6677ba8bd969d54fdfd6b",
+      measurementId: "G-VPC3XSXPSM"
+    }),
+
+    AngularFirestoreModule,
+
+    AngularFireAuthModule
+
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

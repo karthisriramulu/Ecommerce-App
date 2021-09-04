@@ -15,7 +15,10 @@
         <div class="alert alert-danger" *ngIf="password.errors?.minlength && password.touched">Password should be more
             than 6 character or equel</div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> Login </button>
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid" (click)="login(f)"> Login </button>
     </form>
 
 </div>
+
+
+<div class="alert alert-danger" *ngIf="errorMsg"> {{ errorMsg }} </div>
