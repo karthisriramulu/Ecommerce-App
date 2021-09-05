@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { CartService } from '../../services/cart.service';
+import {AuthService} from 'src/app/services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -38,7 +40,7 @@ export class HomeComponent implements OnInit {
     // }
   ];
 
-  constructor(private ps: ProductsService, private cart: CartService) { }
+  constructor(private ps: ProductsService, private cart: CartService, private as: AuthService, private route : Router) { }
 
   ngOnInit(): void {
 
@@ -49,8 +51,11 @@ export class HomeComponent implements OnInit {
 
   addToCard(index){
     
-    this.add = +index;
-    console.log("added item", this.Products[index]);
+    if(this.as.userId)
+      this.add = +index;
+    else
+      this.route.navigate(['/login'])
+    
     
   }
 

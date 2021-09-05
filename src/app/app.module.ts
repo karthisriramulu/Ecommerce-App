@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -53,8 +54,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     }),
 
     AngularFirestoreModule,
-
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireStorageModule
 
   ],
   providers: [AngularFirestore],

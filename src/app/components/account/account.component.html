@@ -1,1 +1,35 @@
-<p>account works!</p>
+<div>
+    <h2 class="text-center">Add new product</h2>
+    <form #f="ngForm" (ngSubmit)="addNewProduct(f)">
+        <input type="text" class="form-control" name="name" ngModel placeholder="Product Name" required><br>
+        <input type="text" class="form-control" name="price" ngModel placeholder="Price" required><br>
+        <input type="file" name="image" required #image><br><br>
+        <input type="submit" value="add" class="btn btn-primary" [disabled]="f.invalid">
+    </form>
+</div>
+
+<div>
+    <h2 class="text-center">Product Dashboard</h2>
+    <table class="table table-dark table-striped">
+        <thead>
+            <td>Product Image</td>
+            <td>Product Name</td>
+            <td>Product Price ($)</td>
+            <td>Options</td>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let product of ProductsArr; index as i">
+                <td><img [src]="product?.ProductPath" id="pro-img"></td>
+                <td>{{ product.Name }}</td>
+                <td><input type="number" placeholder="Price ($$)" [(ngModel)]="product.Price" min="1"></td>
+
+                <td>
+                    <button class="btn btn-primary" (click)="updateProductPrice(i)">Update</button>
+                    <button class="btn btn-danger" (click)="deleteProduct(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

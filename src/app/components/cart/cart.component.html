@@ -10,7 +10,7 @@
     <tbody>
         <tr *ngFor="let product of Shoppingcart; index as i">
             <td>{{ product.name }}</td>
-            <td>{{ product.price }}</td>
+            <td>{{ product.price | currency:'USD' }}</td>
             <td><input type="number" placeholder="Amount (Kg)" [(ngModel)]="product.amount" min="1"></td>
             <td>{{ product.price * product.amount | currency:'USD' }}</td>
             <td>
@@ -19,4 +19,11 @@
             </td>
         </tr>
     </tbody>
+    <!-- <tfoot>
+        <tr> 
+            <td colspan="2">Total Amount</td>
+            <td>{{  }}</td>
+            <td></td>
+        </tr>
+    </tfoot> -->
 </table>
